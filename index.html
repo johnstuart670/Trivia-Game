@@ -24,7 +24,6 @@
 					<H1>THE LOW CARB QUIZ</H1>
 				</div>
 				<!-- links -->
-				<div class="col-md-1" id="previousScore">
 				</div>
 				<!-- Insert link to portfolio when done -->
 				<!-- Insert link to portfolio when done -->
@@ -37,13 +36,7 @@
 
 			</div>
 		</div>
-		<!-- We will update this with the results when the quiz has been finished -->
-		<div class="container hidden" id="results">
-			<div class="row">
-				<div class="col-md-3" id="qCorrect"></div>
-				<div class="col-md-3" id="qWrong"></div>
-			</div>
-		</div>
+	</header>
 
 		</div>
 		<!-- This div will pop up at the end of everything but is hidden on the loading -->
@@ -51,52 +44,45 @@
 <div class="row">
 	<!-- This div contains the questions correctly answered -->
 	<div class="col-md-4">
-			<div class="row">
-			<H3>ANSWERS CORRECT:</H3>
-		</div>
-		<div class="row">
-			<p class="correctAnswers"></p>
-		</div>
+			<H3 class = "col-md-12">ANSWERS CORRECT:</H3>
+			<p class = "col-md-2" id="correctAnswers"></p>
 		</div>
 <!-- THis div contains the number of answers incorrect -->
 <div class="col-md-4">
-		<div class="row">
-		<H3>ANSWERS WRONG:</H3>
-	</div>
-	<div class="row">
-		<p class="wrongAnswers"></p>
-	</div>
+
+		<H3 class = "col-md-12">ANSWERS WRONG:</H3>
+		<p class = "col-md-12" id="wrongAnswers"></p>
 	</div>
 <!-- This div contains the % of correct answers  -->
 <div class="col-md-4">
-		<div class="row">
-		<H3>ANSWERS CORRECT (%):</H3>
-	</div>
-	<div class="row">
-		<p class="percentCorrect"></p>
-	</div>
+		<H3 class = "col-md-12">ANSWERS CORRECT (%):</H3>
+		<p class = "col-md-12" id="percentCorrect"></p>
 	</div>
 </div>
 <div class="row">
-	<h4 class="col-md-6">Were you able to finish early?</h4>
-	<p class="col-md-6" id = "finishClicked"></p>
+	<h4 class="col-md-4">Were you able to finish early?</h4>
+	<p class="col-md-3" id = "finishClicked">No</p>
 </div>
 </div>
+<!-- Instructions area with information that updates based on  -->
 <div class="container" id = "instructions">
 		<div class="row">
-			<!-- on page load this will take up all the screen space.  on click of the start button, it will transition to col-md-5  -->
+
 			<div class="col-md-12" id="instructionsWrap">
-				<h2 class="col-md-12">The Low Carb Quiz Instructions</h2>
+				<h2 class="col-md-12" id = "h2Welcome">The Low Carb Quiz Instructions</h2>
 				<p class="col-md-12" id = "textWelcome">Welcome to the Low Carb Quiz, where you will be quizzed on which of the three foods presented in each question has the
 					fewest Net Carbs per serving. The Quiz has a time limit of 45 seconds once you hit the START button, so be quick!</p>
-				<p class="col-md-12 hidden" id = "textRunning">Your timer is running!</p>
-				<p class="col-md-12 hidden" id = "textFinished">Time's up!  Scroll up to see your score and scroll below to check which answers were correct!</p>
+				<p class="col-md-12"  id = "textRunning">Your timer is running! Results will show when you finish or the timer runs out!</p>
+				<p class="col-md-12"  id = "textFinished">Time's up!  Scroll up to see your score and scroll below to check which answers were correct!
+					<br>
+					<button id = "resetBtn">Reset</button>
+				</p>
 			</div>
 		</div>
 		</div>
 
 		<!-- This container tells us how to calculate netcarbs and hides on the click of the start button.  After the timer has run out, the section returns to 100% width -->
-				<div class="container" id="netCarbs">
+				<div class="netCarbs container" id="netCarbs">
 					<h2 class="col-md-12">How to Calculate Net Carbs</h2>
 					<div class="row mainContent">
 						<img class="col-md-3 nutLabel" src="./assets/images/nutritionlabel.jpg" alt="net carbs nutirition label">
@@ -127,15 +113,19 @@
 			</div>
 		</div>
 		<!-- This is the timer section that will update -->
-
-		
+		<div class="container" id = "timer">
+				<div class="row">
+					<h5 class = "col-md-10">Time left:</h5><p class="timeRemaining"></p>
+				</div>
+			</div>
 		<!-- This is the quiz section of the page.
+			
 		On click of the START HERE button:
 	reveals all items in class and moves into main area and
 starts timer. -->
-		<div class="hidden container col-md-8" id="quiz"></div>
+		<div class="container col-md-8" id="quiz">
 		<!-- Question 1 -->
-		<div class="hidden row Q1">
+		<div class="row Q1">
 			<h6 class = "col-md-12">Which of these foods has the fewest Net Carbs?</h6>
 			<ul class="answers">            
 					<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Zucchini </label><br/>          
@@ -144,7 +134,7 @@ starts timer. -->
 					</ul> 
 		</div>
 		<!-- Question 2 -->
-		<div class="hidden row Q2">
+		<div class="row Q2">
 				<h6 class = "col-md-12">Which of these foods has the fewest Net Carbs?</h6>
 				<ul class="answers">            
 				<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Pumpkin </label><br/>          
@@ -153,7 +143,7 @@ starts timer. -->
 				</ul> 
 		</div>
 		<!-- Question 3 -->
-		<div class="hidden row Q3">			
+		<div class="row Q3">			
 			<h6 class = "col-md-12">Which of these foods has the fewest Net Carbs?</h6>	
 			<ul class="answers">            
 			<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Bread </label><br/>          
@@ -162,7 +152,7 @@ starts timer. -->
 			</ul> 
 </div>
 <!-- QUestion 4 -->
-		<div class="hidden row Q4">
+		<div class="row Q4">
 			<h6 class = "col-md-12">Which of these foods has the fewest Net Carbs?</h6>
 			<ul class="answers">            
 			<input type="radio" name="q4" value="a" id="q4a"><label for="q4a"> Banana </label><br/>          
@@ -171,7 +161,7 @@ starts timer. -->
 			</ul> 
 </div>
 <!-- Question 5 -->
-		<div class="hidden row Q5">
+		<div class="row Q5">
 			<h6 class = "col-md-12">Which of these foods has the fewest Net Carbs?</h6>
 			<ul class="answers">           
 			<input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Cheerios </label><br/>          
@@ -180,11 +170,14 @@ starts timer. -->
 			</ul> 
 </div>
 <!-- Question 6 -->
-		<div class="hidden row finish">
+		<div class="row finish">
 			<button id ="finishBtn">FINISH</button>
 		</div>
 
-	</header>
+	</div>
+
+	<!-- link to Javascript -->
+<script src="./assets/javascript/app.js"></script>
 </body>
 
 </html>
