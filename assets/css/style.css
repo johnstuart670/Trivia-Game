@@ -1,0 +1,13 @@
+img.col-md-6.nutLabel {
+ float: right;
+height: 400px ;
+}
+
+.mainContent {
+	display:flex;
+	height: 400px;
+}
+
+.hidden {
+	display: none;
+}
