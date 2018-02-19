@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Working Title Trivia Game</title>
+	<title>The Low Carb Quiz</title>
 
 	<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
@@ -38,63 +38,107 @@
 			</div>
 		</div>
 		<!-- We will update this with the results when the quiz has been finished -->
-		<div class="container hidden" id = "results">
-<div class="row">
-	<div class="col-md-3" id = "qCorrect"></div>
-	<div class="col-md-3" id = "qWrong"></div>
-</div>
-</div>
-
+		<div class="container hidden" id="results">
+			<div class="row">
+				<div class="col-md-3" id="qCorrect"></div>
+				<div class="col-md-3" id="qWrong"></div>
+			</div>
 		</div>
 
-		<div class="container" id="instructions">
+		</div>
+		<!-- This div will pop up at the end of everything but is hidden on the loading -->
+<div class="container" id = "quizResults">
+<div class="row">
+	<!-- This div contains the questions correctly answered -->
+	<div class="col-md-4">
 			<div class="row">
-				<!-- on page load this will take up all the screen space.  on click of the start button, it will transition to col-md-5  -->
-				<div class="col-md-12"  id = "instructionsWrap">
-					<h2 class="col-md-12">The Low Carb Quiz Instructions</h2>
-					<p class="col-md-12">Welcome to the Low Carb Quiz, where you will be quizzed on which of the three foods presented in each question has the
-						fewest Net Carbs per serving. The Quiz has a time limit of 45 seconds once you hit the START button, so be quick!</p>
-
-					<h2 class="col-md-12">How to Calculate Net Carbs</h2>
-					<div class="row mainContent">
-							<img class="col-md-3 nutLabel" src="./assets/images/nutritionlabel.jpg" alt="net carbs nutirition label">
-							<div class="col-md-8">
-								<div class="row">
-						<p class = "col-md-12">Net Carbs are calculated by subtracting the grams of fiber from the total grams of carbohydrates. In the above image,
-							you can see that the Total Carbohydrates totals "37g" while the Dietary Fiber is "4g". If we follow the formula, we
-							find that the Net Carbs of this example is 33g. </p>
-						</div>
-					
-						<div class="row">
-						<p class = "col-md-12">
-							Total Carbohydrates (37g) - Dietary Fiber (4g) = Net Carbs (33g)
-						</p>
-					</div>
-					<div class="row">
-						<p class = "col-md-12">If you are ready to start, click below to take the Low Carb Quiz!</p>
-						<div class="row">
-						<span class="col-md-1"></span>
-							<button id="startBtn">START HERE</button>
-					</div>
-					</div>
-					</div>
-
-
-				</div>
+			<H3>ANSWERS CORRECT:</H3>
+		</div>
+		<div class="row">
+			<p class="correctAnswers"></p>
+		</div>
+		</div>
+<!-- THis div contains the number of answers incorrect -->
+<div class="col-md-4">
+		<div class="row">
+		<H3>ANSWERS WRONG:</H3>
+	</div>
+	<div class="row">
+		<p class="wrongAnswers"></p>
+	</div>
+	</div>
+<!-- This div contains the % of correct answers  -->
+<div class="col-md-4">
+		<div class="row">
+		<H3>ANSWERS CORRECT (%):</H3>
+	</div>
+	<div class="row">
+		<p class="percentCorrect"></p>
+	</div>
+	</div>
+</div>
+<div class="row">
+	<h4 class="col-md-6">Were you able to finish early?</h4>
+	<p class="col-md-6" id = "finishClicked"></p>
+</div>
+</div>
+<div class="container" id = "instructions">
+		<div class="row">
+			<!-- on page load this will take up all the screen space.  on click of the start button, it will transition to col-md-5  -->
+			<div class="col-md-12" id="instructionsWrap">
+				<h2 class="col-md-12">The Low Carb Quiz Instructions</h2>
+				<p class="col-md-12" id = "textWelcome">Welcome to the Low Carb Quiz, where you will be quizzed on which of the three foods presented in each question has the
+					fewest Net Carbs per serving. The Quiz has a time limit of 45 seconds once you hit the START button, so be quick!</p>
+				<p class="col-md-12 hidden" id = "textRunning">Your timer is running!</p>
+				<p class="col-md-12 hidden" id = "textFinished">Time's up!  Scroll up to see your score and scroll below to check which answers were correct!</p>
 			</div>
 		</div>
 		</div>
+
+		<!-- This container tells us how to calculate netcarbs and hides on the click of the start button.  After the timer has run out, the section returns to 100% width -->
+				<div class="container" id="netCarbs">
+					<h2 class="col-md-12">How to Calculate Net Carbs</h2>
+					<div class="row mainContent">
+						<img class="col-md-3 nutLabel" src="./assets/images/nutritionlabel.jpg" alt="net carbs nutirition label">
+						<div class="col-md-8">
+							<div class="row">
+								<p class="col-md-12">Net Carbs are calculated by subtracting the grams of fiber from the total grams of carbohydrates. In the above image,
+									you can see that the Total Carbohydrates totals "37g" while the Dietary Fiber is "4g". If we follow the formula,
+									we find that the Net Carbs of this example is 33g. </p>
+							</div>
+
+							<div class="row">
+								<p class="col-md-12">
+									Total Carbohydrates (37g) - Dietary Fiber (4g) = Net Carbs (33g)
+								</p>
+							</div>
+							<div class="row">
+								<p class="col-md-12">If you are ready to start, click below to take the Low Carb Quiz!</p>
+								<div class="row">
+									<span class="col-md-1"></span>
+									<button id="startBtn">START HERE</button>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- This is the quiz section of the page.
 		On click of the START HERE button:
-	reveals all items in class and moves into main area
+	reveals all items in class and moves into main area and
 starts timer. -->
-		<div class= "hidden container col-md-8" id="quiz"></div>
+		<div class="hidden container col-md-8" id="quiz"></div>
 		<div class="hidden row Q1">example</div>
 		<div class="hidden row Q2">example</div>
 		<div class="hidden row Q3">example</div>
 		<div class="hidden row Q4">example</div>
 		<div class="hidden row Q5">example</div>
-		<div class="hidden row Q6">example</div>
+		<div class="hidden row finish">
+			<button id ="finishBtn">FINISH</button>
+		</div>
 
 	</header>
 </body>
