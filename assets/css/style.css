@@ -54,10 +54,6 @@ h3 {
 	text-align: center;
 }
 
-.netCarbs.container#netCarbs, #quizResults {
-	padding: 0px -15px 0px -15px;
-}
-
 .liAlt {
 	border: 2px solid goldenrod;
 }
