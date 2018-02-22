@@ -2,6 +2,7 @@ img.col-md-6.nutLabel {
  float: right;
 height: 400px ;
 max-width: 50%;
+margin-bottom: 10px;
 }
 
 .mainContent {
@@ -16,24 +17,26 @@ input[type="radio"]{
 ul {
 	list-style-type: none;
 }
-li:last-child{
-	margin-bottom: 10px;
-}
-
 #quizResults{
 	text-align: center;
+}
+footer {
+	text-align: center;
+	border: 2px solid darkblue;
+	background-color: firebrick;
+	color: white;
+	padding-bottom:15px;
 }
 
 .finishEarly, 
 header,
 .calculateCarbs,
 .btnReset, 
-#timer {
-	margin: 4px 0 4px 0;
+#timer{	
+	margin: 0px 0 8px 0;
 	border: 2px solid darkblue;
-	background-color: darkcyan;
+	background-color: firebrick;
 	color: white;
-	padding: 0px -15px 0px -15px;
 }
 #timer{
 	text-align: center;
@@ -50,13 +53,27 @@ h3 {
 }
 
 #instructionsWrap {
-	border: 2px solid goldenrod;
+	border: 2px solid rgb(250, 180, 3);
 	text-align: center;
 }
 
 .liAlt {
-	border: 2px solid goldenrod;
+	border: 2px solid rgb(250, 180, 3);
 }
-ul {
+ul, hr {
 	padding: 0px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+body {
+	background-color: skyblue;
+}
+
+#instructionsWrap,
+#netCarbs,
+.liAlt,
+li,
+#quizResults {
+	background-color: white;
+	margin-bottom: 5px;
 }
