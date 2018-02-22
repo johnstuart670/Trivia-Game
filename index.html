@@ -10,7 +10,7 @@
 	<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 	<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -45,7 +45,7 @@
 	<!-- This div contains the questions correctly answered -->
 	<div class="col-md-4">
 			<H3 class = "col-md-12">ANSWERS CORRECT:</H3>
-			<p class = "col-md-2" id="correctAnswers"></p>
+			<p class = "col-md-12" id="correctAnswers"></p>
 		</div>
 <!-- THis div contains the number of answers incorrect -->
 <div class="col-md-4">
@@ -55,27 +55,26 @@
 	</div>
 <!-- This div contains the % of correct answers  -->
 <div class="col-md-4">
-		<H3 class = "col-md-12">ANSWERS CORRECT (%):</H3>
+		<H3 class = "col-md-12">ANSWERS CORRECT:</H3>
 		<p class = "col-md-12" id="percentCorrect"></p>
 	</div>
 </div>
-<div class="row">
-	<h4 class="col-md-4">Were you able to finish early?</h4>
-	<p class="col-md-3" id = "finishClicked">No</p>
+<div class="row finishEarly">
+	<h4 class="col-md-6">Were you able to finish early?</h4>
+	<p class="col-md-6" id = "finishClicked">No</p>
 </div>
 </div>
 <!-- Instructions area with information that updates based on  -->
 <div class="container" id = "instructions">
 		<div class="row">
-
 			<div class="col-md-12" id="instructionsWrap">
 				<h2 class="col-md-12" id = "h2Welcome">The Low Carb Quiz Instructions</h2>
 				<p class="col-md-12" id = "textWelcome">Welcome to the Low Carb Quiz, where you will be quizzed on which of the three foods presented in each question has the
-					fewest Net Carbs per serving. The Quiz has a time limit of 45 seconds once you hit the START button, so be quick!</p>
+					fewest Net Carbs per serving. The Quiz has a time limit of 75 seconds once you hit the START button, so be quick!</p>
 				<p class="col-md-12"  id = "textRunning">Your timer is running! Results will show when you finish or the timer runs out!</p>
 				<p class="col-md-12"  id = "textFinished">Time's up!  Scroll up to see your score and scroll below to check which answers were correct!
 					<br>
-					<button id = "resetBtn">Reset</button>
+					<button id = "resetBtn">Reset to Try Again!</button>
 				</p>
 			</div>
 		</div>
@@ -83,7 +82,9 @@
 
 		<!-- This container tells us how to calculate netcarbs and hides on the click of the start button.  After the timer has run out, the section returns to 100% width -->
 				<div class="netCarbs container" id="netCarbs">
-					<h2 class="col-md-12">How to Calculate Net Carbs</h2>
+					<div class="row">
+					<h2 class="col-md-12 calculateCarbs">How to Calculate Net Carbs</h2>
+				</div>
 					<div class="row mainContent">
 						<img class="col-md-3 nutLabel" src="./assets/images/nutritionlabel.jpg" alt="net carbs nutirition label">
 						<div class="col-md-8">
@@ -113,9 +114,9 @@
 			</div>
 		</div>
 		<!-- This is the timer section that will update -->
-		<div class="container" id = "timer">
+		<div class="container" class = "timer">
 				<div class="row">
-					<p class = "col-md-10">Time left: 01 Min  15 sec</p>
+					<p class = "col-md-12" id = "timer">Time left: 01 Min  15 sec</p>
 				</div>
 			</div>
 		<!-- This is the quiz section of the page.
@@ -123,44 +124,40 @@
 		On click of the START HERE button:
 	reveals all items in class and moves into main area and
 starts timer. -->
-		<div class="container col-md-8" id="quiz">
+		<div class="container col-md-10" id="quiz">
 			<ul>
-				<li>
-					<h3>How many letters are there in "JS"?</h3>
+				<li class = "liAlt">
+					<h3>Which of these foods has the lowest Net Carbs?</h3>
 					<input type="radio" name="question0" value="A">2<br>
 					<input type="radio" name="question0" value="B">1<br>
 					<input type="radio" name="question0" value="C">3<br>
-					<input type="radio" name="question0" value="D">4<br>
 				</li>
 				<li>
-					<h3>How many letters are there in "BMX"?</h3>
+					<h3>Which of these foods has the lowest Net Carbs?</h3>
 					<input type="radio" name="question1" value="A">2<br>
 					<input type="radio" name="question1" value="B">1<br>
 					<input type="radio" name="question1" value="C">3<br>
-					<input type="radio" name="question1" value="D">4<br>
 				</li>
-				<li>
-					<h3>How many letters are there in "A"?</h3>
+				<li class = "liAlt">
+					<h3>Which of these foods has the lowest Net Carbs?</h3>
 					<input type="radio" name="question2" value="A">2<br>
 					<input type="radio" name="question2" value="B">1<br>
 					<input type="radio" name="question2" value="C">3<br>
-					<input type="radio" name="question2" value="D">4<br>
 				</li>
 				<li>
-					<h3>How many letters are there in "A"?</h3>
+					<h3>Which of these foods has the lowest Net Carbs?</h3>
 					<input type="radio" name="question3" value="A">2<br>
 					<input type="radio" name="question3" value="B">1<br>
 					<input type="radio" name="question3" value="C">3<br>
-					<input type="radio" name="question3" value="D">4<br>
+				</li>
+				<li class = "liAlt">
+					<h3>Which of these foods has the lowest Net Carbs?</h3>
+					<input type="radio" name="question4" value="A">2<br>
+					<input type="radio" name="question4" value="B">1<br>
+					<input type="radio" name="question4" value="C">3<br>
 				</li>
 			</ul>
-			<li>
-				<h3>How many letters are there in "A"?</h3>
-				<input type="radio" name="question4" value="A">2<br>
-				<input type="radio" name="question4" value="B">1<br>
-				<input type="radio" name="question4" value="C">3<br>
-				<input type="radio" name="question4" value="D">4<br>
-			</li>
+			
 <button id = "finishBtn">Finish Early!</button>
 	</div>
 

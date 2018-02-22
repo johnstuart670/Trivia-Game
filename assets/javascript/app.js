@@ -6,10 +6,10 @@ var score = 0;
 var wrongAnswers = 5 - score;
 var correctPercent = score / wrongAnswers;
 // counter variables for the timer
-var minutes;
-var seconds;
+var minutes = 1;
+var seconds = 15;
 // please update back to 75
-var counter = 10;
+var counter = 75;
 
 
 
@@ -66,7 +66,8 @@ function getCheckedValue( radioName ){
 function getScore(){
   score = 0;
   for (var i=0; i<tot; i++)
-    if(getCheckedValue("question"+i)===answers[i]) score += 1; // increment only
+		if(getCheckedValue("question"+i)===answers[i]) score += 1;
+		$()
   return score;
 }
 
@@ -102,6 +103,10 @@ function resetValues() {
 	wrongAnswers = 1;
 	finishClicked.text("No");
 	console.log("The value Variables have been reset")
+	counter = 75;
+	var minutes = 1;
+var seconds = 15;
+	timer.text("Time Left: " + minutes + " Min " + seconds + " Sec")
 }
 
 // Function that defines the experience during the quiz
