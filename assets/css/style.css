@@ -14,7 +14,7 @@ max-width: 50%;
 }
 
 /* We will toggle this class on on click of the button class to show the choice */
-.selected {
+.checked {
 border: 3px solid blue;
 };
 
@@ -26,6 +26,10 @@ border: 3px solid blue;
 	border: 4px solid red;
 };
 
-#quizResults{
-	text-align: center;
+input[type="radio"]{
+  margin: 0 10px 0 10px;
+}
+label {
+	margin: 5px;
+	padding: 5px;
 }
